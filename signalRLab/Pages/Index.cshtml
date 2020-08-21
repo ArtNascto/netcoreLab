@@ -1,0 +1,88 @@
+﻿@page
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-6"><label>Nome:</label> <input type="text" id="userInput"  class="form-control"/></div>
+       <br />
+    </div>
+     <br />
+    <div class="row">
+        <h4>Escolha: Qual foi o melhor anime da temporada de inverno de 2016?</h4>
+    </div>
+    <hr />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-check" style="margin-bottom:3em;">
+                      <label class="form-check-label" for="grimgar">
+                    <img src="~/imgs/hai-to-gensou.jpg" height="300px" />
+                    <br />
+                    <input class="form-check-input" type="radio" name="poll" id="grimgar"
+                        value="Hai to Gensou no Grimgar" />
+                        Hai to Gensou no Grimgar <span id="grimgarBlock"></span><br />
+                    </label>
+                </div>
+                <div class="form-check" style="margin-bottom:3em;">
+                         <label class="form-check-label" for="ajin">
+                    <img src="~/imgs/Ajin.jpg" height="300px" />
+                    <br />
+                    <input class="form-check-input" type="radio" name="poll" id="ajin" value="Ajin" />
+                        Ajin <span id="ajinBlock"></span><br />
+                    </label>
+                </div>
+                <div class="form-check" style="margin-bottom:3em;">
+                        <label class="form-check-label" for="machi">
+                    <img src="~/imgs/Boku-dake-ga-Inai-Machi.png" height="300px" />
+                    <br />
+                    <input class="form-check-input" type="radio" name="poll" id="machi"
+                        value="Boku dake ga Inai Machi" />
+                        Boku dake ga Inai Machi <span id="machiBlock"></span><br />
+                    </label>
+                </div>
+                <div class="form-check" style="margin-bottom:3em;">
+                         <label class="form-check-label" for="konosuba">
+                    <img src="~/imgs/Kono-Subarashii-Sekai-ni-Shukufuku-wo.jpg" height="300px" />
+                    <br />
+                    <input class="form-check-input" type="radio" name="poll" id="konosuba"
+                        value="Kono Subarashii Sekai ni Shukufuku wo!" />
+                        Kono Subarashii Sekai ni Shukufuku wo!
+                        <span id="konosubaBlock"></span><br />
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-12">
+                <button type="button" id="sendButton" class="btn btn-primary" onclick="send()">
+                    Vote
+                </button>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row" style="margin-bottom: 10em;">
+        <div class="col-12">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/poll.js"></script>
